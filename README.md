@@ -1,1 +1,1 @@
-weather-display.github.io
+https://nickplus11.github.io/WeatherDisplay/
