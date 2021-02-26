@@ -10,9 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="">
+    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="changed div to form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +57,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614079268597</updated>
-      <workItem from="1614079269733" duration="33108000" />
+      <workItem from="1614079269733" duration="37053000" />
     </task>
+    <task id="LOCAL-00001" summary="changed div to form">
+      <created>1614294907185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614294907185</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,7 +83,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed div to form" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed div to form" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1614294912888">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1614294912888" />
+    <state x="425" y="198" key="run.anything.popup" timestamp="1614324188720">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="198" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1614324188720" />
     <state x="430" y="182" key="search.everywhere.popup" timestamp="1614156452669">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
