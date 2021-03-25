@@ -25,8 +25,7 @@ document
 update_location_button1.addEventListener('click', evt => getLocation(evt));
 update_location_button2.addEventListener('click', evt => getLocation(evt));
 const defaultCity = "Korobitsyno";
-
-localStorage.setItem("0", "");
+const defaultSavedCities = ['Красная поляна', 'Шерегеш'];
 
 function getLocation() {
     const geolocation = navigator.geolocation;
@@ -93,7 +92,6 @@ function updateInfoInBox(json, boxIndex) {
                 </li>`;
 
     } else if (boxIndex > 0 && boxIndex <= MAX_SMALL_BOXES_COUNT) {
-        console.log(json);
         let sb = document.querySelectorAll('.small-city-info-box')[boxIndex - 1];
         document.querySelectorAll(".small-city")[boxIndex - 1].innerHTML = json.name;
         document.querySelectorAll('.small-degrees')[boxIndex - 1].innerHTML =
@@ -197,7 +195,12 @@ async function getWeatherJSON(position, cityName) {
 
 document.addEventListener('DOMContentLoaded', () => {
     setDefaultWeather();
-    let cities = ["Шерегеш", "Красная поляна"];
+    let data = localStorage.getItem('0');
+    if (data == null || data.length === 0) {
+        localStorage.setItem('0', defaultSavedCities.map(x => x.toLowerCase()).join('_'));
+    }
+    let cities = localStorage.getItem('0').split('_');
+    localStorage.setItem('0', "");
     for (let i = 0; i < cities.length; ++i) {
         addNewCity(cities[i]);
     }
@@ -226,8 +229,9 @@ function assignListeners() {
 }
 
 async function addNewCity(name) {
-    console.log("addNewCity incoming city name: " + name);
-    let idx = document.querySelectorAll(".small-city").length + 1;
+    name = name.toLowerCase();
+    let small_cities = document.querySelectorAll(".small-city");
+    let idx = small_cities == null ? 1 : small_cities.length + 1;
     if (idx > MAX_SMALL_BOXES_COUNT) {
         alert("error: not enough space, delete 1 saved city");
         return;
@@ -286,8 +290,11 @@ async function addNewCity(name) {
 }
 
 function removeCityFromStorage(name) {
+    name = name.toLowerCase();
     let old = localStorage.getItem('0');
     localStorage.removeItem('0');
     localStorage.setItem('0',
-        old.replace(name + "_", "").replace("_" + name, ""));
+        old.replace(name + "_", "")
+            .replace("_" + name, "")
+            .replace(name, ""));
 }

@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="connected weather API">
+    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="added snow and mist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
@@ -58,7 +58,7 @@
       <updated>1614079268597</updated>
       <workItem from="1614079269733" duration="37903000" />
       <workItem from="1615488741036" duration="612000" />
-      <workItem from="1616566768218" duration="46242000" />
+      <workItem from="1616566768218" duration="48851000" />
     </task>
     <task id="LOCAL-00001" summary="changed div to form">
       <created>1614294907185</created>
@@ -74,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616653186221</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added snow and mist">
+      <created>1616653511301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616653511301</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,17 +103,18 @@
     <MESSAGE value="changed div to form" />
     <MESSAGE value="minor style changes" />
     <MESSAGE value="connected weather API" />
-    <option name="LAST_COMMIT_MESSAGE" value="connected weather API" />
+    <MESSAGE value="added snow and mist" />
+    <option name="LAST_COMMIT_MESSAGE" value="added snow and mist" />
   </component>
   <component name="WindowStateProjectService">
     <state x="550" y="188" key="FileChooserDialogImpl" timestamp="1616570308832">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="550" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1616570308832" />
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616653190825">
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616653512702">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616653190825" />
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616653512702" />
     <state x="425" y="198" key="run.anything.popup" timestamp="1614324188720">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
