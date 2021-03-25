@@ -180,7 +180,8 @@ async function getWeatherJSON(position, cityName) {
     let data = await fetch(request, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "f2179e951emsh65f3421070db832p184eecjsn1761d1e22e7c",
+            //"x-rapidapi-key": "f2179e951emsh65f3421070db832p184eecjsn1761d1e22e7c",
+            "x-rapidapi-key": "f494fb3154msh0913796c0863d67p15ea29jsndfcee442a36e",
             "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
         }
     })
