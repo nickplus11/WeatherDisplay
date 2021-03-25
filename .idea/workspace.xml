@@ -10,8 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="updated license key">
+    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="minor changes for saved cities markdown">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +60,7 @@
       <updated>1614079268597</updated>
       <workItem from="1614079269733" duration="37903000" />
       <workItem from="1615488741036" duration="612000" />
-      <workItem from="1616566768218" duration="52368000" />
+      <workItem from="1616566768218" duration="62146000" />
     </task>
     <task id="LOCAL-00001" summary="changed div to form">
       <created>1614294907185</created>
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616664578603</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="minor changes for saved cities markdown">
+      <created>1616667980834</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616667980834</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,24 +129,29 @@
     <MESSAGE value="added snow and mist" />
     <MESSAGE value="fixed local storage" />
     <MESSAGE value="updated license key" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated license key" />
+    <MESSAGE value="minor changes for saved cities markdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes for saved cities markdown" />
   </component>
   <component name="WindowStateProjectService">
     <state x="550" y="188" key="FileChooserDialogImpl" timestamp="1616570308832">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="550" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1616570308832" />
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616664580488">
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616667982619">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616664580488" />
-    <state x="425" y="198" key="run.anything.popup" timestamp="1614324188720">
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616667982619" />
+    <state x="94" y="94" width="1349" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1616708841492">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="198" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1614324188720" />
-    <state x="427" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1616666940129">
+    <state x="94" y="94" width="1349" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1616708841492" />
+    <state x="424" y="198" key="run.anything.popup" timestamp="1616709543008">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="427" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1616666940129" />
+    <state x="424" y="198" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1616709543008" />
+    <state x="426" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1616669729518">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="426" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1616669729518" />
   </component>
 </project>

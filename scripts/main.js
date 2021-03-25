@@ -22,12 +22,16 @@ document
         }
     );
 
-update_location_button1.addEventListener('click', evt => getLocation(evt));
-update_location_button2.addEventListener('click', evt => getLocation(evt));
+update_location_button1
+    .addEventListener('click', evt => getLocation(evt));
+update_location_button2
+    .addEventListener('click', evt => getLocation(evt));
+
 const defaultCity = "Korobitsyno";
 const defaultSavedCities = ['Красная поляна', 'Шерегеш'];
 
 function getLocation() {
+    showLoader(0);
     const geolocation = navigator.geolocation;
     geolocation.getCurrentPosition(showLocation, errorHandler, {enableHighAccuracy: true});
 }
@@ -38,9 +42,13 @@ function errorHandler(err) {
 
 async function showLocation(position) {
     const json = await getWeatherJSON(position);
-    if (json == null) return;
+    if (json == null) {
+        hideLoader(0);
+        return;
+    }
 
     updateInfoInBox(json, 0);
+    hideLoader(0);
 }
 
 const MAX_SMALL_BOXES_COUNT = 4;
@@ -50,7 +58,7 @@ function updateInfoInBox(json, boxIndex) {
         console.log(json);
         console.log(json.name);
 
-        alert("error: unfortunately request hasn't been processed correctly");
+        alert("К сожалению, что-то пошло не так. Попробуйте снова.");
         if (boxIndex > 0)
             document
                 .querySelectorAll(".small-city-info-box")[boxIndex - 1].parentElement
@@ -65,30 +73,34 @@ function updateInfoInBox(json, boxIndex) {
         newH2.innerHTML = json.name;
         fb.appendChild(newH2);
 
-        document.querySelector('.big-degrees').innerHTML =
-            `<span>${json.main.temp.toFixed()}&#176;C</span>`
-        document.querySelector('.big-icon').innerHTML =
-            `<img src=${getIcon(json)} alt="big weather logo">`
+        let d = document.querySelector('.big-degrees');
+        d.innerHTML = `<span>${json.main.temp.toFixed()}&#176;C</span>`;
+        //document.querySelector('.big-degrees span').hidden = true;
+
+        let i = document.querySelector('.big-icon');
+        i.innerHTML = `<img src=${getIcon(json)} alt="big weather logo">`;
+        //document.querySelector('.big-icon img').hidden = true;
+
         document.querySelector('#big-list-weather').innerHTML =
             `<li>
                     <span>Ветер</span>
-                    <span>${json.wind.speed} м/с</span>
+                    <span class="big-info">${json.wind.speed} м/с</span>
                 </li>
                 <li>
                     <span>Облачность</span>
-                    <span>${json.weather[0].description}</span>
+                    <span class="big-info">${json.weather[0].description}</span>
                 </li>
                 <li>
                     <span>Давление</span>
-                    <span>${json.main.pressure} Па</span>
+                    <span class="big-info">${json.main.pressure} Па</span>
                 </li>
                 <li>
                     <span>Влажность</span>
-                    <span>${json.main.humidity}%</span>
+                    <span class="big-info">${json.main.humidity}%</span>
                 </li>
                 <li>
                     <span>Координаты</span>
-                    <span>[${json.coord.lat.toFixed(2)}, ${json.coord.lon.toFixed(2)}]</span>
+                    <span class="big-info">[${json.coord.lat.toFixed(2)}, ${json.coord.lon.toFixed(2)}]</span>
                 </li>`;
 
     } else if (boxIndex > 0 && boxIndex <= MAX_SMALL_BOXES_COUNT) {
@@ -186,6 +198,9 @@ async function getWeatherJSON(position, cityName) {
         }
     })
 
+    if (data.status == 429) {
+        alert('Слишком много запросов. Попробуйте повторить позже.');
+    }
     if (data.ok) {
         return await data.json();
     } else {
@@ -222,27 +237,22 @@ function assignListeners() {
     boxes.forEach((elem, idx) => {
         elem.addEventListener('click', () => {
             let cityName = elem.parentElement.firstChild.nextSibling.textContent;
-            removeCityFromStorage(cityName);
+            removeCityFromStorage(cityName.toLowerCase());
             console.log(localStorage.getItem('0'));
             elem.parentElement.parentElement.remove();
         })
     })
 }
 
+const dataLoadingInfoString = "Информация загружается";
+
 async function addNewCity(name) {
-    name = name.toLowerCase();
     let small_cities = document.querySelectorAll(".small-city");
     let idx = small_cities == null ? 1 : small_cities.length + 1;
     if (idx > MAX_SMALL_BOXES_COUNT) {
-        alert("error: not enough space, delete 1 saved city");
+        alert('Недостаточно места. Сократите список избранных городов.');
         return;
     }
-    let cities = localStorage.getItem('0');
-    localStorage.removeItem('0');
-    if (cities.length === 0)
-        localStorage.setItem('0', name);
-    else localStorage.setItem('0', cities + "_" + name);
-    console.log(localStorage.getItem("0"));
 
     let newBox = document.createElement('li');
     newBox.innerHTML =
@@ -252,41 +262,52 @@ async function addNewCity(name) {
                         <img src="img/weather_logo_1.png" alt="small weather logo">
                     </div>
                     <div class="small-degrees">
-                        <span>8&#176;C</span>
+                        <span></span>
                     </div>
                     <button class="cancel-button">&#10005;</button>
                 </div>
                 <ul class="list-weather">
                     <li>
                         <span>Ветер</span>
-                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                        <span>${dataLoadingInfoString}</span>
                     </li>
                     <li>
                         <span>Облачность</span>
-                        <span>Broken clouds</span>
+                        <span>${dataLoadingInfoString}</span>
                     </li>
                     <li>
                         <span>Давление</span>
-                        <span>1013 Па</span>
+                        <span>${dataLoadingInfoString}</span>
                     </li>
                     <li>
                         <span>Влажность</span>
-                        <span>52%</span>
+                        <span>${dataLoadingInfoString}</span>
                     </li>
                     <li>
                         <span>Координаты</span>
-                        <span>[59.88, 30.42]</span>
+                        <span>${dataLoadingInfoString}</span>
                     </li>
                 </ul>`;
+
     document.querySelector('.small-cities-list').appendChild(newBox);
+    showLoader(idx);
     let data = await getWeatherJSON(null, name);
     if (data == null) {
         document.querySelector('.small-cities-list').removeChild(newBox);
         alert("Мы не смогли найти информацию по вашему запросу. Попробуйте еще раз.");
-        removeCityFromStorage(name);
+        hideLoader(idx);
         return;
     }
+
+    let cities = localStorage.getItem('0');
+    localStorage.removeItem('0');
+    if (cities.length === 0)
+        localStorage.setItem('0', data.name.toLowerCase());
+    else localStorage.setItem('0', cities + "_" + data.name.toLowerCase());
+    console.log(localStorage.getItem("0"));
+
     updateInfoInBox(data, idx);
+    hideLoader(idx);
     assignListeners();
 }
 
@@ -298,4 +319,54 @@ function removeCityFromStorage(name) {
         old.replace(name + "_", "")
             .replace("_" + name, "")
             .replace(name, ""));
+}
+
+function showLoader(idx) {
+    if (idx === 0) {
+        //let icon = document.querySelector(".big-icon");
+        let degrees = document.querySelector(".big-degrees");
+
+        let infos = document.querySelectorAll(".big-info");
+        infos.forEach(x => x.innerHTML = `${dataLoadingInfoString}`);
+
+        //document.querySelector(".big-icon img").hidden = true;
+        document.querySelector(".big-degrees span").hidden = true;
+
+        // icon.classList.add("loader");
+        degrees.classList.add("loader");
+    } else {
+        //let icon = document.querySelectorAll(".small-icon")[idx-1];
+        let degrees = document.querySelectorAll(".small-degrees")[idx - 1];
+
+        document.querySelectorAll(".small-degrees span")[idx - 1].hidden = true;
+
+        degrees.classList.add("mini-loader");
+    }
+}
+
+function hideLoader(idx) {
+    if (idx === 0) {
+        //let icon = document.querySelector(".big-icon");
+        let degrees = document.querySelector(".big-degrees");
+
+        let infos = document.querySelectorAll(".big-info");
+        infos.forEach(x => {
+            if (x.innerHTML === `${dataLoadingInfoString}`) {
+                x.innerHTML = "";
+            }
+        });
+
+        //icon.classList.remove("loader");
+        degrees.classList.remove("loader");
+
+        //document.querySelector(".big-icon img").hidden = false;
+        document.querySelector(".big-degrees span").hidden = false;
+    } else {
+        //let icon = document.querySelectorAll(".small-icon")[idx-1];
+        let degrees = document.querySelectorAll(".small-degrees")[idx - 1];
+
+        degrees.classList.remove("mini-loader");
+
+        document.querySelectorAll(".small-degrees span")[idx - 1].hidden = false;
+    }
 }
