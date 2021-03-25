@@ -246,11 +246,11 @@ header {
 }
 
 @media (max-width: 900px) {
-    .main-vertical-container{
+    .main-vertical-container {
         grid-template: 0.6fr 0.1fr 1fr / 1fr;
     }
 
-    .add-new-city{
+    .add-new-city {
         width: auto;
     }
 
@@ -259,7 +259,7 @@ header {
         margin-right: 1em;
     }
 
-    .add-city-text-area{
+    .add-city-text-area {
         width: 90%;
     }
 
@@ -269,6 +269,8 @@ header {
     }
 
     .big-city {
+        text-align: center;
+        white-space: normal;
         grid-area: 1 / 1 / span 1 / span 1;
     }
 
@@ -280,6 +282,35 @@ header {
         grid-area: 3 / 1 / span 1 / span 1;
         font-size: 3.5em;
         margin: 0;
+    }
+
+    .small-city-info-box {
+        height: auto;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+
+    .cancel-button {
+        grid-area: 1 / 2 / span 1/ span 1;
+        justify-self: right;
+    }
+
+    .small-degrees {
+        grid-area: 2 / 1 / span 1/ span 1;
+        justify-self: center;
+    }
+
+    .small-icon {
+        grid-area: 2 / 2 / span 1/ span 1;
+        justify-self: center;
+    }
+
+    .small-city {
+        text-align: center;
+        width: 70%;
+        grid-area: 1 / 1 / span 1/ span 2;
+        white-space: normal;
+        justify-self: center;
     }
 }
 
@@ -308,7 +339,7 @@ header {
         align-items: center;
     }
 
-    #big-box-container{
+    #big-box-container {
         grid-area: 1 / 1 / span 1 / span 1;
         grid-template: 1fr 1fr / 1fr;
     }
@@ -332,7 +363,7 @@ header {
         grid-area: 2 / 2 / span 1 / span 1;
     }
 
-    #big-list-weather{
+    #big-list-weather {
         grid-area: 2 / 1 / span 1 / span 1;
     }
 
@@ -388,6 +419,6 @@ header {
 
 @media (max-width: 320px) {
     html {
-        width: 400px;
+        width: 320px;
     }
 }
