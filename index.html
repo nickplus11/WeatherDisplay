@@ -23,46 +23,48 @@
 </header>
 <main>
     <div class="main-vertical-container">
-        <div class="big-city-full-box">
-            <h2 class="big-city">Saint-Petersburg</h2>
-            <div class="big-icon">
-                <img src="img/weather_logo_1.png" alt="big weather logo">
+        <div id="big-box-container">
+            <div class="big-city-full-box">
+                <h2 class="big-city">Санкт-Петербург</h2>
+                <div class="big-icon">
+                    <img src="img/weather_logo_1.png" alt="big weather logo">
+                </div>
+                <div class="big-degrees">
+                    <span>8&#176;C</span>
+                </div>
             </div>
-            <div class="big-degrees">
-                <span>8&#176;C</span>
-            </div>
+            <ul class="list-weather" id="big-list-weather">
+                <li>
+                    <span>Ветер</span>
+                    <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                </li>
+                <li>
+                    <span>Облачность</span>
+                    <span>Broken clouds</span>
+                </li>
+                <li>
+                    <span>Давление</span>
+                    <span>1013 Па</span>
+                </li>
+                <li>
+                    <span>Влажность</span>
+                    <span>52%</span>
+                </li>
+                <li>
+                    <span>Координаты</span>
+                    <span>[59.88, 30.42]</span>
+                </li>
+            </ul>
         </div>
-        <ul class="list-weather">
-            <li>
-                <span>Ветер</span>
-                <span>Moderate breeze, 6.0 m/s, North-northwest</span>
-            </li>
-            <li>
-                <span>Облачность</span>
-                <span>Broken clouds</span>
-            </li>
-            <li>
-                <span>Давление</span>
-                <span>1013 hpa</span>
-            </li>
-            <li>
-                <span>Влажность</span>
-                <span>52%</span>
-            </li>
-            <li>
-                <span>Координаты</span>
-                <span>[59.88, 30.42]</span>
-            </li>
-        </ul>
         <div class="saved-container">
             <span class="saved"><h2>Избранное</h2></span>
-            <form class="add-new-city" action="">
+            <form class="add-new-city" action="" onsubmit="return false">
                 <input class="add-city-text-area" type="text" placeholder=" Добавить новый город"/>
                 <button class="add-city-button">+</button>
             </form>
         </div>
         <ul class="small-cities-list">
-            <li id="small-city-full-box1">
+           <!-- <li id="small-city-full-box1">
                 <div class="small-city-info-box">
                     <h3 class="small-city">Moscow</h3>
                     <div class="small-icon">
@@ -84,7 +86,7 @@
                     </li>
                     <li>
                         <span>Давление</span>
-                        <span>1013 hpa</span>
+                        <span>1013 Па</span>
                     </li>
                     <li>
                         <span>Влажность</span>
@@ -118,7 +120,7 @@
                     </li>
                     <li>
                         <span>Давление</span>
-                        <span>1013 hpa</span>
+                        <span>1013 Па</span>
                     </li>
                     <li>
                         <span>Влажность</span>
@@ -152,7 +154,7 @@
                     </li>
                     <li>
                         <span>Давление</span>
-                        <span>1013 hpa</span>
+                        <span>1013 Па</span>
                     </li>
                     <li>
                         <span>Влажность</span>
@@ -186,7 +188,7 @@
                     </li>
                     <li>
                         <span>Давление</span>
-                        <span>1013 hpa</span>
+                        <span>1013 Па</span>
                     </li>
                     <li>
                         <span>Влажность</span>
@@ -197,9 +199,10 @@
                         <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         </ul>
     </div>
 </main>
 </body>
+<script src="scripts/main.js"></script>
 </html>

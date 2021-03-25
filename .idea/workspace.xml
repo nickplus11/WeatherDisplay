@@ -10,7 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="changed div to form">
+    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="minor style changes">
+      <change afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
@@ -38,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab7" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -57,7 +58,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614079268597</updated>
-      <workItem from="1614079269733" duration="37053000" />
+      <workItem from="1614079269733" duration="37903000" />
+      <workItem from="1615488741036" duration="612000" />
+      <workItem from="1616566768218" duration="45913000" />
     </task>
     <task id="LOCAL-00001" summary="changed div to form">
       <created>1614294907185</created>
@@ -82,12 +85,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed div to form" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed div to form" />
+    <MESSAGE value="minor style changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor style changes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="550" y="188" key="FileChooserDialogImpl" timestamp="1616570308832">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="550" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1616570308832" />
     <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1614294912888">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -96,9 +105,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="198" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1614324188720" />
-    <state x="430" y="182" key="search.everywhere.popup" timestamp="1614156452669">
+    <state x="428" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1616649815344">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="430" y="182" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614156452669" />
+    <state x="428" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1616649815344" />
   </component>
 </project>
