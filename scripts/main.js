@@ -93,6 +93,7 @@ function updateInfoInBox(json, boxIndex) {
                 </li>`;
 
     } else if (boxIndex > 0 && boxIndex <= MAX_SMALL_BOXES_COUNT) {
+        console.log(json);
         let sb = document.querySelectorAll('.small-city-info-box')[boxIndex - 1];
         document.querySelectorAll(".small-city")[boxIndex - 1].innerHTML = json.name;
         document.querySelectorAll('.small-degrees')[boxIndex - 1].innerHTML =
@@ -138,6 +139,8 @@ function getImgCode(json) {
     else if (code < 510) return "10d";
     else if (code === 511) return "13d";
     else if (code < 600) return "09d";
+    else if (code < 700) return "13d";
+    else if (code < 800) return "50d";
     else if (code === 800) return "01d";
     else if (code === 801) return "02d";
     else if (code === 802) return "03d";
