@@ -74,7 +74,7 @@ header {
 
 #big-box-container {
     width: 100%;
-    grid-area: 1 / 1 / span 1 / span 1;
+    grid-area: 1 / 1 / span 1 / span 2;
     display: grid;
     grid-template-rows: repeat(1, auto);
     grid-template-columns: 1fr 0.1fr 1fr;
