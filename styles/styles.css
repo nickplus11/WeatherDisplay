@@ -154,7 +154,7 @@ header {
     align-self: start;
     display: grid;
     grid-template: 1fr / 1fr 1fr;
-    grid-area: 2 / 1 / span 1 / span 1;
+    grid-area: 2 / 1 / span 1 / span 2;
 }
 
 .saved {
