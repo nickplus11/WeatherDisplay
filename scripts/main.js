@@ -28,7 +28,7 @@ update_location_button2
     .addEventListener('click', evt => getLocation(evt));
 
 const defaultCity = "Korobitsyno";
-const defaultSavedCities = ['Красная поляна', 'Шерегеш'];
+const defaultSavedCities = [];
 
 function getLocation() {
     showLoader(0);
@@ -38,25 +38,24 @@ function getLocation() {
 
 function errorHandler(err) {
     console.error(err)
+    hideLoader(0);
+    alert("Не удалось определить ваше местонахождение. Попробуйте позже.");
+    setDefaultWeather();
 }
 
 async function showLocation(position) {
+    console.log("position " + position);
     const json = await getWeatherJSON(position);
-    if (json == null) {
-        hideLoader(0);
-        return;
+    if (json != null) {
+        updateInfoInBox(json, 0);
     }
-
-    updateInfoInBox(json, 0);
     hideLoader(0);
 }
 
-const MAX_SMALL_BOXES_COUNT = 4;
+const MAX_SMALL_BOXES_COUNT = 100;
 
 function updateInfoInBox(json, boxIndex) {
     if (json == null || json.name == null) {
-        console.log(json);
-        console.log(json.name);
 
         alert("К сожалению, что-то пошло не так. Попробуйте снова.");
         if (boxIndex > 0)
@@ -193,15 +192,20 @@ async function getWeatherJSON(position, cityName) {
         "method": "GET",
         "headers": {
             //"x-rapidapi-key": "f2179e951emsh65f3421070db832p184eecjsn1761d1e22e7c",
-            "x-rapidapi-key": "f494fb3154msh0913796c0863d67p15ea29jsndfcee442a36e",
+            //"x-rapidapi-key": "f494fb3154msh0913796c0863d67p15ea29jsndfcee442a36e",
+            "x-rapidapi-key": "3cb78950cemsh2902c9b450e5005p166e7ejsn6fed8248b622",
             "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
         }
-    })
+    }).catch(() => {
+        return null;
+    });
 
+    if (data == null) return null;
     if (data.status == 429) {
         alert('Слишком много запросов. Попробуйте повторить позже.');
     }
     if (data.ok) {
+        console.log("data is ok. city " + cityName);
         return await data.json();
     } else {
         console.error("error: " + data.status);
@@ -212,14 +216,18 @@ async function getWeatherJSON(position, cityName) {
 document.addEventListener('DOMContentLoaded', () => {
     setDefaultWeather();
     let data = localStorage.getItem('0');
-    if (data == null || data.length === 0) {
-        localStorage.setItem('0', defaultSavedCities.map(x => x.toLowerCase()).join('_'));
+    if (defaultSavedCities.length > 0) {
+        if (data == null || data.length === 0) {
+            localStorage.setItem('0', defaultSavedCities.map(x => x.toLowerCase()).join('_'));
+        }
     }
+
     let cities = localStorage.getItem('0').split('_');
     localStorage.setItem('0', "");
     for (let i = 0; i < cities.length; ++i) {
         addNewCity(cities[i]);
     }
+
     assignListeners();
 });
 
@@ -247,6 +255,7 @@ function assignListeners() {
 const dataLoadingInfoString = "Информация загружается";
 
 async function addNewCity(name) {
+    if (name == null || name.length === 0) return;
     let small_cities = document.querySelectorAll(".small-city");
     let idx = small_cities == null ? 1 : small_cities.length + 1;
     if (idx > MAX_SMALL_BOXES_COUNT) {
@@ -257,7 +266,7 @@ async function addNewCity(name) {
     let newBox = document.createElement('li');
     newBox.innerHTML =
         ` <div class="small-city-info-box">
-                    <h3 class="small-city">Moscow</h3>
+                    <h3 class="small-city">${name}</h3>
                     <div class="small-icon">
                         <img src="img/weather_logo_1.png" alt="small weather logo">
                     </div>
@@ -323,6 +332,7 @@ function removeCityFromStorage(name) {
 
 function showLoader(idx) {
     if (idx === 0) {
+        console.log("show big loader");
         //let icon = document.querySelector(".big-icon");
         let degrees = document.querySelector(".big-degrees");
 
@@ -346,6 +356,7 @@ function showLoader(idx) {
 
 function hideLoader(idx) {
     if (idx === 0) {
+        console.log("hide big loader");
         //let icon = document.querySelector(".big-icon");
         let degrees = document.querySelector(".big-degrees");
 

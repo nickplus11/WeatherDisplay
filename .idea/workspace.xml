@@ -10,9 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="column fix">
+    <list default="true" id="f8def7ac-e916-487b-a6c2-ec165f677a8e" name="Default Changelist" comment="column fix 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,8 @@
       <updated>1614079268597</updated>
       <workItem from="1614079269733" duration="37903000" />
       <workItem from="1615488741036" duration="612000" />
-      <workItem from="1616566768218" duration="63031000" />
+      <workItem from="1616566768218" duration="64570000" />
+      <workItem from="1617184595655" duration="6319000" />
     </task>
     <task id="LOCAL-00001" summary="changed div to form">
       <created>1614294907185</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616740761366</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="column fix 2">
+      <created>1616740868803</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616740868803</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,17 +152,18 @@
     <MESSAGE value="minor changes for saved cities markdown" />
     <MESSAGE value="added loader" />
     <MESSAGE value="column fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="column fix" />
+    <MESSAGE value="column fix 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="column fix 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="550" y="188" key="FileChooserDialogImpl" timestamp="1616570308832">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="550" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1616570308832" />
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616740763131">
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2" timestamp="1616740870883">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616740763131" />
+    <state x="362" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1616740870883" />
     <state x="94" y="94" width="1349" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1616708841492">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
