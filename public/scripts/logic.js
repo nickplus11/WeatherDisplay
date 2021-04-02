@@ -20,7 +20,7 @@ export function showLocation(position) {
     requestWeather(position, 0, null);
 }
 
-function requestWeather(position, idx, newBox) {
+function requestWeather(position, idx, newBox, addFlag) {
     let requestURL;
     let result = {};
     result.status = 'ok';
@@ -47,7 +47,7 @@ function requestWeather(position, idx, newBox) {
         .then(data => {
             result.status = 'ok';
             result.json = data;
-            onSuccess(result, idx, newBox);
+            onSuccess(result, idx, newBox, addFlag);
         })
         .catch(err => {
             result.status = 'error';
@@ -57,11 +57,11 @@ function requestWeather(position, idx, newBox) {
     return out;
 }
 
-function onSuccess(data, idx, newBox) {
+function onSuccess(data, idx, newBox, addFlag) {
     updateInfoInBox(data.json, idx);
     hideLoader(idx);
     assignListeners();
-    if (idx > 0) addCityToSaved(data.json.name);
+    if (idx > 0 && addFlag) addCityToSaved(data.json.name);
 }
 
 function onFailure(data, idx, newBox) {
@@ -70,7 +70,7 @@ function onFailure(data, idx, newBox) {
     hideLoader(idx);
 }
 
-const MAX_SMALL_BOXES_COUNT = 100;
+const MAX_SMALL_BOXES_COUNT = 10000;
 
 export function updateInfoInBox(json, boxIndex) {
     if (json === undefined || json.name === undefined) {
@@ -179,7 +179,7 @@ export function setDefaultWeather() {
 
 const dataLoadingInfoString = "Информация загружается";
 
-export function addNewCity(name) {
+export function addNewCity(name, addFlag) {
     if (name == null || name.length === 0) return;
     let small_cities = document.querySelectorAll(".small-city");
     let idx = small_cities == null ? 1 : small_cities.length + 1;
@@ -227,7 +227,7 @@ export function addNewCity(name) {
     showLoader(idx);
     let position = {};
     position.name = name;
-    requestWeather(position, idx, newBox);
+    requestWeather(position, idx, newBox, addFlag);
 }
 
 const savedURL = `${serverURL}/favorites`;
@@ -242,12 +242,33 @@ function getSaved() {
         })
         .then(data => {
             console.log(data);
-            if(data.favorites !== undefined && data.favorites.length > 0)
-                data.favorites.forEach(x => addNewCity(x.name));
+            if (data.favorites !== undefined && data.favorites.length > 0) {
+                let cities = data.favorites;
+                removeAllSaved();
+                cities.forEach(x => {
+                    //removeCityFromSaved(x.name);
+                    addNewCity(x.name, false);
+                    console.log(data.favorites);
+                });
+            }
         })
         .catch(err => {
             console.log("Failed to load favorites");
         });
+}
+
+function getCities(){
+    let boxes = document.querySelectorAll(".cancel-button");
+    boxes.forEach((elem, idx) => {
+        elem.parentElement.parentElement.remove();
+    })
+}
+
+function removeAllSaved() {
+    let boxes = document.querySelectorAll(".cancel-button");
+    boxes.forEach((elem, idx) => {
+        elem.parentElement.parentElement.remove();
+    })
 }
 
 export function removeCityFromSaved(name) {

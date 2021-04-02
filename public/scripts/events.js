@@ -11,7 +11,7 @@ document
     .addEventListener('keydown', evt => {
         let textHolder = document.querySelector(".add-city-text-area");
         if (textHolder.value !== "" && evt.key === "Enter") {
-            addNewCity(textHolder.value);
+            addNewCity(textHolder.value, true);
             textHolder.value = "";
         }
     });
@@ -21,7 +21,7 @@ document
     .addEventListener('click', evt => {
             let textHolder = document.querySelector(".add-city-text-area");
             if (textHolder.value !== "") {
-                addNewCity(textHolder.value);
+                addNewCity(textHolder.value, true);
                 textHolder.value = "";
             }
         }
