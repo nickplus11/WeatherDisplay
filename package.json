@@ -1,0 +1,25 @@
+{
+  "name": "weatherdisplay",
+  "version": "1.0.0",
+  "description": "https://nickplus11.github.io/WeatherDisplay/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickplus11/weather-display.github.io.git"
+  },
+  "author": "nickplus11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickplus11/weather-display.github.io/issues"
+  },
+  "homepage": "https://github.com/nickplus11/weather-display.github.io#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.5",
+    "node-fetch": "^2.6.1"
+  }
+}

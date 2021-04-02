@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/weather_logo_1.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Weather</title>
+</head>
+<body>
+<header>
+    <div class="weather-here-header"><h1>Погода здесь</h1></div>
+    <button class="update-geo">
+        <span>Обновить геолокацию</span>
+    </button>
+    <button class="refresh-button">
+        <img src="img/refresh.png" alt="rfr">
+    </button>
+</header>
+<main>
+    <div class="main-vertical-container">
+        <div id="big-box-container">
+            <div class="big-city-full-box">
+                <h2 class="big-city">Санкт-Петербург</h2>
+                <div class="big-icon">
+                    <img src="img/weather_logo_1.png" alt="big weather logo">
+                </div>
+                <div class="big-degrees">
+                    <span>8&#176;C</span>
+                </div>
+            </div>
+            <ul class="list-weather" id="big-list-weather">
+                <li>
+                    <span>Ветер</span>
+                    <span class="big-info">Moderate breeze, 6.0 m/s, North-northwest</span>
+                </li>
+                <li>
+                    <span>Облачность</span>
+                    <span class="big-info">Broken clouds</span>
+                </li>
+                <li>
+                    <span>Давление</span>
+                    <span class="big-info">1013 Па</span>
+                </li>
+                <li>
+                    <span>Влажность</span>
+                    <span class="big-info">52%</span>
+                </li>
+                <li>
+                    <span>Координаты</span>
+                    <span class="big-info">[59.88, 30.42]</span>
+                </li>
+            </ul>
+        </div>
+        <div class="saved-container">
+            <span class="saved"><h2>Избранное</h2></span>
+            <form class="add-new-city" action="" onsubmit="return false">
+                <input class="add-city-text-area" type="text" placeholder=" Добавить новый город"/>
+                <button class="add-city-button">+</button>
+            </form>
+        </div>
+        <ul class="small-cities-list">
+            <!-- <li id="small-city-full-box1">
+                 <div class="small-city-info-box">
+                     <h3 class="small-city">Moscow</h3>
+                     <div class="small-icon">
+                         <img src="img/weather_logo_1.png" alt="small weather logo">
+                     </div>
+                     <div class="small-degrees">
+                         <span>8&#176;C</span>
+                     </div>
+                     <button class="cancel-button">&#10005;</button>
+                 </div>
+                 <ul class="list-weather">
+                     <li>
+                         <span>Ветер</span>
+                         <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                     </li>
+                     <li>
+                         <span>Облачность</span>
+                         <span>Broken clouds</span>
+                     </li>
+                     <li>
+                         <span>Давление</span>
+                         <span>1013 Па</span>
+                     </li>
+                     <li>
+                         <span>Влажность</span>
+                         <span>52%</span>
+                     </li>
+                     <li>
+                         <span>Координаты</span>
+                         <span>[59.88, 30.42]</span>
+                     </li>
+                 </ul>
+             </li>
+             <li id="small-city-full-box2">
+                 <div class="small-city-info-box">
+                     <h3 class="small-city">Moscow</h3>
+                     <div class="small-icon">
+                         <img src="img/weather_logo_1.png" alt="small weather logo">
+                     </div>
+                     <div class="small-degrees">
+                         <span>8&#176;C</span>
+                     </div>
+                     <button class="cancel-button">&#10005;</button>
+                 </div>
+                 <ul class="list-weather">
+                     <li>
+                         <span>Ветер</span>
+                         <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                     </li>
+                     <li>
+                         <span>Облачность</span>
+                         <span>Broken clouds</span>
+                     </li>
+                     <li>
+                         <span>Давление</span>
+                         <span>1013 Па</span>
+                     </li>
+                     <li>
+                         <span>Влажность</span>
+                         <span>52%</span>
+                     </li>
+                     <li>
+                         <span>Координаты</span>
+                         <span>[59.88, 30.42]</span>
+                     </li>
+                 </ul>
+             </li>
+             <li id="small-city-full-box3">
+                 <div class="small-city-info-box">
+                     <h3 class="small-city">Moscow</h3>
+                     <div class="small-icon">
+                         <img src="img/weather_logo_1.png" alt="small weather logo">
+                     </div>
+                     <div class="small-degrees">
+                         <span>8&#176;C</span>
+                     </div>
+                     <button class="cancel-button">&#10005;</button>
+                 </div>
+                 <ul class="list-weather">
+                     <li>
+                         <span>Ветер</span>
+                         <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                     </li>
+                     <li>
+                         <span>Облачность</span>
+                         <span>Broken clouds</span>
+                     </li>
+                     <li>
+                         <span>Давление</span>
+                         <span>1013 Па</span>
+                     </li>
+                     <li>
+                         <span>Влажность</span>
+                         <span>52%</span>
+                     </li>
+                     <li>
+                         <span>Координаты</span>
+                         <span>[59.88, 30.42]</span>
+                     </li>
+                 </ul>
+             </li>
+             <li id="small-city-full-box4">
+                 <div class="small-city-info-box">
+                     <h3 class="small-city">Moscow</h3>
+                     <div class="small-icon">
+                         <img src="img/weather_logo_1.png" alt="small weather logo">
+                     </div>
+                     <div class="small-degrees">
+                         <span>8&#176;C</span>
+                     </div>
+                     <button class="cancel-button">&#10005;</button>
+                 </div>
+                 <ul class="list-weather">
+                     <li>
+                         <span>Ветер</span>
+                         <span>Moderate breeze, 6.0 m/s, North-northwest</span>
+                     </li>
+                     <li>
+                         <span>Облачность</span>
+                         <span>Broken clouds</span>
+                     </li>
+                     <li>
+                         <span>Давление</span>
+                         <span>1013 Па</span>
+                     </li>
+                     <li>
+                         <span>Влажность</span>
+                         <span>52%</span>
+                     </li>
+                     <li>
+                         <span>Координаты</span>
+                         <span>[59.88, 30.42]</span>
+                     </li>
+                 </ul>
+             </li>-->
+        </ul>
+    </div>
+</main>
+</body>
+<script type="module" src="scripts/events.js"></script>
+<script type="module" src="scripts/logic.js"></script>
+</html>
